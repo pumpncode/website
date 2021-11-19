@@ -13,7 +13,6 @@ const modifiedImports = { ...imports };
 
 modifiedImports.ultra = "https://raw.githubusercontent.com/nnmrts/ultra/url-imports/mod.ts"
 
-
 const fixEntry = async ({
 	path,
 	name,
@@ -35,8 +34,6 @@ const fixEntry = async ({
 
 			newJs = newJs.replaceAll(regex, `import$1"${url}"`);
 		}
-
-		// console.log(newJs);
 
 		await writeTextFile(path, newJs);
 	}
