@@ -99,7 +99,10 @@ jobs:
                   target_branch: "url-imports"
                   commit_message_template: "[Automated] Merged {source_ref} into target {target_branch}"
             - name: push
-              run: git push
+              run: |
+                  cd $GITHUB_WORKSPACE
+                  cd ./ultra
+                  git push
             - name: checkout url-imports
               uses: actions/checkout@v2
               with:
