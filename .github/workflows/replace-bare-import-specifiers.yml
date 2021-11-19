@@ -4,9 +4,25 @@ on:
         branches:
             - main
 jobs:
-    replace-ultra:
+    setup:
         runs-on: macos-latest
         steps:
+            - name: set up folder
+              run: |
+                  cd $GITHUB_WORKSPACE
+                  mkdir website
+                  cd ./website
+            - uses: actions/checkout@v2
+
+    replace-ultra:
+        needs: setup
+        runs-on: macos-latest
+        steps:
+            - name: set up folder
+              run: |
+                  cd $GITHUB_WORKSPACE
+                  mkdir ultra
+                  cd ./ultra
             - uses: denoland/setup-deno@v1
               with:
                   deno-version: vx.x.x
@@ -26,7 +42,7 @@ jobs:
                   repository: nnmrts/ultra
                   ref: url-imports
             - name: replace bare import specificiers in files
-              run: deno run -A ./.github/workflows/replace-bare-import-specifiers.js
+              run: deno run -A ../website/.github/workflows/replace-bare-import-specifiers.js
             - name: git config
               run: |
                   git config user.name github-actions
@@ -37,10 +53,16 @@ jobs:
               run: git commit -m "replace bare import specificiers with urls"
             - name: push
               run: git push
+            - name: step out
+              run: cd ../
     replace:
         needs: replace-ultra
         runs-on: macos-latest
         steps:
+            - name: set up folder
+              run: |
+                  cd $GITHUB_WORKSPACE
+                  cd ./website
             - uses: denoland/setup-deno@v1
               with:
                   deno-version: vx.x.x

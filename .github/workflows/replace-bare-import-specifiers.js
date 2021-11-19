@@ -36,9 +36,9 @@ const fixEntry = async ({
 			newJs = newJs.replaceAll(regex, `import$1"${url}"`);
 		}
 
-		console.log(newJs);
+		// console.log(newJs);
 
-		// await writeTextFile(path, newJs);
+		await writeTextFile(path, newJs);
 	}
 }
 
