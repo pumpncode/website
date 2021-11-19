@@ -98,6 +98,8 @@ jobs:
                   source_ref: "main"
                   target_branch: "url-imports"
                   commit_message_template: "[Automated] Merged {source_ref} into target {target_branch}"
+            - name: push
+              run: git push
             - name: checkout url-imports
               uses: actions/checkout@v2
               with:
