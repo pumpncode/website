@@ -19,6 +19,8 @@ jobs:
                   target_branch: "url-imports"
                   commit_message_template: "[Automated] Merged {source_ref} into target {target_branch}"
             - name: checkout url-imports
-              run: git checkout url-imports
+              uses: actions/checkout@v2
+              with:
+                  ref: url-imports
             - name: replace import specificiers
               run: deno run -A ./.github/workflows/replace-bare-import-specifiers.js
