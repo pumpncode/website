@@ -13,6 +13,8 @@ jobs:
                   mkdir website
                   cd ./website
             - uses: actions/checkout@v2
+              with:
+                  path: website
 
     replace-ultra:
         needs: setup
@@ -28,6 +30,7 @@ jobs:
                   deno-version: vx.x.x
             - uses: actions/checkout@v2
               with:
+                  path: ultra
                   repository: nnmrts/ultra
             - name: Merge main -> url-imports
               uses: everlytic/branch-merge@1.1.2
@@ -39,6 +42,7 @@ jobs:
             - name: checkout url-imports
               uses: actions/checkout@v2
               with:
+                  path: ultra
                   repository: nnmrts/ultra
                   ref: url-imports
             - name: replace bare import specificiers in files
@@ -67,6 +71,8 @@ jobs:
               with:
                   deno-version: vx.x.x
             - uses: actions/checkout@v2
+              with:
+                  path: website
             - name: Merge main -> url-imports
               uses: everlytic/branch-merge@1.1.2
               with:
@@ -77,6 +83,7 @@ jobs:
             - name: checkout url-imports
               uses: actions/checkout@v2
               with:
+                  path: website
                   ref: url-imports
             - name: replace bare import specificiers in files
               run: deno run -A ./.github/workflows/replace-bare-import-specifiers.js
