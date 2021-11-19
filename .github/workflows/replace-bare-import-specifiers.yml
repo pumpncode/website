@@ -12,8 +12,9 @@ jobs:
                   deno-version: vx.x.x
             - uses: actions/checkout@v2
             - name: Merge main -> url-imports
-              uses: devmasx/merge-branch@v1
+              uses: everlytic/branch-merge@1.1.2
               with:
-                  type: now
-                  target_branch: url-imports
                   github_token: ${{ github.token }}
+                  source_ref: ${{ github.ref }}
+                  target_branch: "master"
+                  commit_message_template: "[Automated] Merged {source_ref} into target {target_branch}"
