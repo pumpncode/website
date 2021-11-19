@@ -9,28 +9,40 @@ const {
 	imports
 } = JSON.parse(await readTextFile("./modules.json"));
 
-for await (const {
+const modifiedImports = { ...imports };
+
+modifiedImports.ultra = "https://raw.githubusercontent.com/nnmrts/ultra/url-imports/mod.ts"
+
+
+const fixEntry = async ({
 	path,
 	name,
 	isFile
-} of walk(".")) {
-	const isJsFile = (name.endsWith(".js") || name.endsWith(".jsx"))
+}) => {
+	const isFileWithPossibleImports = name.match(/\.(?:j|t)sx?$/) !== null;
 
 	const isNotInDotGithub = !path.startsWith(".github");
 
-	const relevant = isFile && isJsFile && isNotInDotGithub
+	const relevant = isFile && isFileWithPossibleImports && isNotInDotGithub
 
 	if (relevant) {
 		const js = await readTextFile(path);
 
 		let newJs = js;
 
-		for (const [name, url] of Object.entries(imports)) {
+		for (const [name, url] of Object.entries(modifiedImports)) {
 			const regex = new RegExp(`^import((?:(?!import)(?:.|\\n))*)"${name}";$`, "gm");
 
 			newJs = newJs.replaceAll(regex, `import$1"${url}"`);
 		}
 
-		await writeTextFile(path, newJs);
+		console.log(newJs);
+
+		// await writeTextFile(path, newJs);
 	}
 }
+
+for await (const entry of walk(".")) {
+	await fixEntry(entry);
+}
+
