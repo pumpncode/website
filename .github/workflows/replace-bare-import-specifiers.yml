@@ -1,0 +1,19 @@
+name: replace bare import specificiers
+on:
+    push:
+        branches:
+            - main
+jobs:
+    replace:
+        runs-on: macos-latest
+        steps:
+            - uses: denoland/setup-deno@v1
+              with:
+                  deno-version: vx.x.x
+            - uses: actions/checkout@v2
+            - name: Merge main -> url-imports
+              uses: devmasx/merge-branch@v1
+              with:
+                  type: now
+                  target_branch: url-imports
+                  github_token: ${{ github.token }}
