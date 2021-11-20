@@ -4,7 +4,6 @@ import postcss from "postcss";
 import postcssNesting from "postcss-nesting";
 import { Snelm } from "snelm";
 import dynamicImportsPolyfill from "./server/dynamic-imports-polyfill.js";
-import "dotenv/load";
 
 const {
 	env,
