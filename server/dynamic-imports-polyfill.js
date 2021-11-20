@@ -6,17 +6,20 @@
   https://opensource.org/licenses/MIT.
 */
 
-import { config } from "https://deno.land/x/dotenv/mod.ts";
+import { configAsync } from "dotenv";
 
 let {
 	env
 } = Deno;
 
 if (env.get("mode") === "prod") {
-	env = new Map(config());
+	env = new Map({
+		...env.toObject(),
+		...(await configAsync())
+	});
 }
 else {
-	config({ export: true })
+	configAsync({ export: true });
 }
 
 if (env.get("mode") === "dev") {
