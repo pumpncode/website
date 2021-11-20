@@ -6,8 +6,6 @@
   https://opensource.org/licenses/MIT.
 */
 
-import "dotenv/load";
-
 const {
 	env
 } = Deno;
