@@ -35,7 +35,7 @@ const fixEntry = async ({
 		for (const [name, url] of Object.entries(modifiedImports)) {
 			const regex = new RegExp(`^import((?:(?!import)(?:.|\\n))*)"${name}";$`, "gm");
 
-			newJs = newJs.replaceAll(regex, `import$1"${url}"`);
+			newJs = newJs.replaceAll(regex, `import$1"${url}";`);
 
 			replaceCounter += 1;
 		}
