@@ -13,14 +13,14 @@ const modifiedImports = { ...imports };
 
 modifiedImports.ultra = "https://raw.githubusercontent.com/nnmrts/ultra/url-imports/mod.ts"
 
+let fileCounter = 0;
+let replaceCounter = 0;
+
 const fixEntry = async ({
 	path,
 	name,
 	isFile
 }) => {
-	console.log(path);
-	console.log(name);
-
 	const isFileWithPossibleImports = name.match(/\.(?:j|t)sx?$/) !== null;
 
 	const isNotInDotGithub = !path.startsWith(".github");
@@ -28,8 +28,6 @@ const fixEntry = async ({
 	const relevant = isFile && isFileWithPossibleImports && isNotInDotGithub
 
 	if (relevant) {
-		console.log("relevant");
-
 		const js = await readTextFile(path);
 
 		let newJs = js;
@@ -38,11 +36,13 @@ const fixEntry = async ({
 			const regex = new RegExp(`^import((?:(?!import)(?:.|\\n))*)"${name}";$`, "gm");
 
 			newJs = newJs.replaceAll(regex, `import$1"${url}"`);
+
+			replaceCounter += 1;
 		}
 
-		await writeTextFile(path, newJs);
+		fileCounter += 1;
 
-		console.log(newJs);
+		await writeTextFile(path, newJs);
 	}
 }
 
@@ -50,3 +50,4 @@ for await (const entry of walk(".")) {
 	await fixEntry(entry);
 }
 
+console.log(`made ${replaceCounter} changes in ${fileCounter} files`);
