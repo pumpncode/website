@@ -1,10 +1,10 @@
-import ultra, { app, router } from "ultra";
-import anybar from "anybar";
-import postcss from "postcss";
-import postcssNesting from "postcss-nesting";
-import { Snelm } from "snelm";
+import ultra, { app, router } from "https://raw.githubusercontent.com/pumpncode/ultra/url-imports/mod.ts";
+import anybar from "https://x.nest.land/anybar@0.1.3/module.js";
+import postcss from "https://deno.land/x/postcss/mod.js";
+import postcssNesting from "https://cdn.jsdelivr.net/npm/postcss-nesting@10/mod.js";
+import { Snelm } from "https://deno.land/x/snelm/mod.ts";
 import dynamicImportsPolyfill from "./server/dynamic-imports-polyfill.js";
-import "dotenv/load";
+import "https://deno.land/x/dotenv/load.ts";
 
 const {
 	env,
