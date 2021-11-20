@@ -3,17 +3,20 @@ import anybar from "anybar";
 import postcss from "postcss";
 import postcssNesting from "postcss-nesting";
 import { Snelm } from "snelm";
+import { initialize } from "dynamic-import-polyfill";
 
 const {
-	env: {
-		mode
-	},
+	env,
 	readTextFile
 } = Deno;
 
+initialize({
+	modulePath: "./src"
+});
+
 const importMapJson = await readTextFile("modules.json");
 
-if (mode === "dev") {
+if (env.get("mode") === "dev") {
 	anybar("green");
 }
 
