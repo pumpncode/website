@@ -3,14 +3,11 @@ import anybar from "anybar";
 import postcss from "postcss";
 import postcssNesting from "postcss-nesting";
 import { Snelm } from "snelm";
-import dynamicImportsPolyfill from "./server/dynamic-imports-polyfill.js";
 
 const {
 	env,
 	readTextFile
 } = Deno;
-
-dynamicImportsPolyfill();
 
 const importMapJson = await readTextFile("modules.json");
 
