@@ -6,7 +6,7 @@
   https://opensource.org/licenses/MIT.
 */
 
-import { config } from "dotenv";
+import { config } from "https://deno.land/x/dotenv/mod.ts";
 
 let {
 	env
