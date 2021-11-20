@@ -13,10 +13,10 @@ let {
 } = Deno;
 
 if (env.get("mode") === "prod") {
-	env = new Map({
+	env = new Map(Object.entries({
 		...env.toObject(),
 		...(await configAsync())
-	});
+	}));
 }
 else {
 	configAsync({ export: true });
