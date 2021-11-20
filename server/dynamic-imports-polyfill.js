@@ -6,7 +6,7 @@
   https://opensource.org/licenses/MIT.
 */
 
-import "https://deno.land/x/dotenv/load.ts";
+import "dotenv/load";
 
 const {
 	env
@@ -17,8 +17,6 @@ if (env.get("mode") === "dev") {
 }
 
 const deployUrl = env.get("deploy-url");
-
-console.log(deployUrl);
 
 const location = new URL(deployUrl);
 
