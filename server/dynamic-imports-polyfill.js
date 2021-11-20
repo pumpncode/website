@@ -18,8 +18,6 @@ if (env.get("mode") === "dev") {
 
 const deployUrl = env.get("deploy-url");
 
-console.log(deployUrl);
-
 const location = new URL(deployUrl);
 
 /**

@@ -10,9 +10,7 @@ const {
 	readTextFile
 } = Deno;
 
-dynamicImportsPolyfill({
-	modulePath: "./src"
-});
+dynamicImportsPolyfill();
 
 const importMapJson = await readTextFile("modules.json");
 
