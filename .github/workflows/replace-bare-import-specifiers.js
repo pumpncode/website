@@ -11,7 +11,7 @@ const {
 
 const modifiedImports = { ...imports };
 
-modifiedImports.ultra = "https://raw.githubusercontent.com/nnmrts/ultra/url-imports/mod.ts"
+modifiedImports.ultra = modifiedImports.ultra.replace("main", "url-imports");
 
 let fileCounter = 0;
 let replaceCounter = 0;
