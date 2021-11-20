@@ -5,12 +5,17 @@ import postcssNesting from "postcss-nesting";
 import { Snelm } from "snelm";
 
 const {
+	env: {
+		mode
+	},
 	readTextFile
 } = Deno;
 
 const importMapJson = await readTextFile("modules.json");
 
-anybar("green");
+if (mode === "dev") {
+	anybar("green");
+}
 
 const targets = [];
 
