@@ -3,14 +3,14 @@ import anybar from "anybar";
 import postcss from "postcss";
 import postcssNesting from "postcss-nesting";
 import { Snelm } from "snelm";
-import { initialize } from "dynamic-import-polyfill";
+import dynamicImportsPolyfill from "./server/dynamic-imports-polyfill.js";
 
 const {
 	env,
 	readTextFile
 } = Deno;
 
-initialize({
+dynamicImportsPolyfill({
 	modulePath: "./src"
 });
 

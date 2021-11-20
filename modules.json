@@ -13,7 +13,6 @@
 		"oak": "https://deno.land/x/oak/mod.ts",
 		"postcss": "https://deno.land/x/postcss/mod.js",
 		"postcss-nesting": "https://cdn.jsdelivr.net/npm/postcss-nesting@10/mod.js",
-		"snelm": "https://deno.land/x/snelm/mod.ts",
-		"dynamic-import-polyfill": "https://raw.githubusercontent.com/GoogleChromeLabs/dynamic-import-polyfill/master/index.mjs"
+		"snelm": "https://deno.land/x/snelm/mod.ts"
 	}
 }
