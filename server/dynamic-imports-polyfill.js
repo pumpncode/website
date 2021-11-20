@@ -6,9 +6,18 @@
   https://opensource.org/licenses/MIT.
 */
 
-const {
+import { config } from "dotenv";
+
+let {
 	env
 } = Deno;
+
+if (env.get("mode") === "prod") {
+	env = new Map(config());
+}
+else {
+	config({ export: true })
+}
 
 if (env.get("mode") === "dev") {
 	env.set("deploy-url", `https://localhost:${env.get("port")}`)
