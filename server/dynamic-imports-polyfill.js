@@ -6,7 +6,7 @@
   https://opensource.org/licenses/MIT.
 */
 
-import "dotenv/load";
+import "https://deno.land/x/dotenv/load.ts";
 
 const {
 	env
