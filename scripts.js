@@ -23,7 +23,7 @@ export default {
 			watch: false,
 			env: {
 				mode: "prod",
-				certFile: "/etc/letsencrypt/live/pumpn.net/cert.pem",
+				certFile: "/etc/letsencrypt/live/pumpn.net/fullchain.pem",
 				keyFile: "/etc/letsencrypt/live/pumpn.net/privkey.pem",
 				url: "https://pumpn.net"
 			}
