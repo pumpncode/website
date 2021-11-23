@@ -20,11 +20,16 @@ export default {
 		start: {
 			desc: "start",
 			cmd: "./server.js",
-			watch: false
+			watch: false,
+			env: {
+				mode: "prod",
+				certFile: "/etc/letsencrypt/live/pumpn.net/cert.pem",
+				keyFile: "/etc/letsencrypt/live/pumpn.net/privkey.pem"
+			}
 		},
 		dev: {
 			desc: "dev",
-			cmd: `denon status loading && denon start`,
+			cmd: `denon status loading && deno run ./server.js`,
 			env: {
 				mode: "dev"
 			}
