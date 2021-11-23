@@ -14,7 +14,7 @@ export default {
 		"run",
 		"net"
 	],
-	importmap: "./modules.json",
+	importMap: "./modules.json",
 	noCheck: true,
 	scripts: {
 		start: {
