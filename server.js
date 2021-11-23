@@ -24,11 +24,7 @@ const snelm = new Snelm("oak", {
 	expectCt: null,
 	featurePolicy: null,
 	frameguard: null,
-	hidePoweredBy: null,
-	hsts: null,
-	ieNoOpen: null,
-	referrerPolicy: null,
-	xssProtection: null
+	hidePoweredBy: null
 });
 
 app.use(async (context, next) => {
