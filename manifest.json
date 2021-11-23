@@ -1,0 +1,10 @@
+{
+	"name": "Pumpn Universe",
+	"short_name": "Pumpn Universe",
+	"start_url": ".",
+	"display": "standalone",
+	"background_color": "#00f",
+	"description": "Kreatives Konglomerat - seit 2013",
+	"icons": [],
+	"related_applications": []
+}

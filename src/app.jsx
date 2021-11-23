@@ -34,6 +34,8 @@ const Ultra = class extends Component {
 					<title>Pumpn Universe</title>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<meta name="description" content="Kreatives Konglomerat - seit 2013" />
+					<link rel="manifest" href="./manifest.json" />
 					<link rel="preload" href="./style.css" as="style" />
 					<link rel="stylesheet" href="./style.css" />
 				</Helmet>
