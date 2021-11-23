@@ -1,5 +1,5 @@
-import { Helmet } from "https://esm.sh/react-helmet-async?deps=react@18.0.0-alpha-bc9bb87c2-20210917&bundle";
-import React, { Component, Fragment } from "https://esm.sh/react@18.0.0-alpha-bc9bb87c2-20210917";
+import { Helmet } from "react-helmet";
+import React, { Component, Fragment } from "react";
 
 let hasOpenedOnce = false;
 
@@ -32,9 +32,10 @@ const Ultra = class extends Component {
 			<Fragment>
 				<Helmet>
 					<title>Pumpn Universe</title>
+					<meta charset="utf-8" />
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<link rel="preload" href="./style.css" as="style" />
 					<link rel="stylesheet" href="./style.css" />
-					{/* <link rel="stylesheet" href="./style.css" media="none" onload="if(media!='all')media='all'" /> */}
 				</Helmet>
 				<main>
 					<h1>Hello World!</h1>
