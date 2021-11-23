@@ -24,7 +24,8 @@ export default {
 			env: {
 				mode: "prod",
 				certFile: "/etc/letsencrypt/live/pumpn.net/cert.pem",
-				keyFile: "/etc/letsencrypt/live/pumpn.net/privkey.pem"
+				keyFile: "/etc/letsencrypt/live/pumpn.net/privkey.pem",
+				url: "https://pumpn.net"
 			}
 		},
 		dev: {
