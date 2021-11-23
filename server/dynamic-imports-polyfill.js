@@ -6,7 +6,7 @@
   https://opensource.org/licenses/MIT.
 */
 
-import { configAsync } from "https://deno.land/x/dotenv/mod.ts";
+import { configAsync } from "dotenv";
 
 let {
 	env
