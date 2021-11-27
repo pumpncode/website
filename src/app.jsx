@@ -36,6 +36,17 @@ const Ultra = class extends Component {
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta name="description" content="Kreatives Konglomerat - seit 2013" />
 					<link rel="manifest" href="./manifest.json" />
+
+					<link rel="icon" type="image/svg+xml" href="./images/pulogo-square.svg" />
+					<link rel="icon" type="image/png" href="./images/pulogo-square.png" />
+
+					<link rel="apple-touch-icon" sizes="512x512" href="./images/icon.icns" />
+
+					<link rel="mask-icon" href="./images/pulogo.svg" color="#0000ff" />
+					<meta name="application-name" content="Pumpn Universe" />
+					<meta name="msapplication-TileColor" content="#0000ff" />
+					<meta name="theme-color" content="#0000ff" />
+
 					<link rel="preload" href="./style.css" as="style" />
 					<link rel="stylesheet" href="./style.css" />
 				</Helmet>
