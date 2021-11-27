@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 
 let hasOpenedOnce = false;
 
-const Ultra = class extends Component {
+const App = class extends Component {
 	componentDidMount() {
 		const {
 			hostname
@@ -70,4 +70,4 @@ const Ultra = class extends Component {
 	}
 };
 
-export default Ultra;
+export default App;
