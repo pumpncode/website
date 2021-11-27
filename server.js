@@ -49,7 +49,7 @@ app.use(async (context, next) => {
 
 		const cssText = await readTextFile(cssFilePath);
 
-		const output = (await postcss([postcssNesting]).process(cssText, { from: cssFilePath })).css;
+		const output = (await postcss([postcssNesting]).process(cssText, { from: cssFilePath, map: true })).css;
 
 		context.response.headers.set("Content-type", "text/css")
 
