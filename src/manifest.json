@@ -1,10 +1,41 @@
 {
 	"name": "Pumpn Universe",
 	"short_name": "Pumpn Universe",
-	"start_url": ".",
+	"start_url": "./",
 	"display": "standalone",
+	"description": "doing stuff & making things - since 2013",
+	"theme_color": "#00f",
 	"background_color": "#00f",
-	"description": "Kreatives Konglomerat - seit 2013",
-	"icons": [],
-	"related_applications": []
+	"dir": "auto",
+	"lang": "en",
+	"orientation": "any",
+	"prefer_related_applications": false,
+	"scoper": "./",
+	"categories": [
+		"business",
+		"finance",
+		"games",
+		"lifestyle",
+		"magazines",
+		"music",
+		"personalization",
+		"productivity",
+		"social"
+	],
+	"icons": [
+		{
+			"src": "./images/icon.png",
+			"sizes": "890x890",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "./images/icon.icns",
+			"sizes": "512x512",
+			"type": "image/icns",
+			"purpose": "any"
+		}
+	],
+	"related_applications": [],
+	"shortcuts": []
 }
