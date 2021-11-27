@@ -28,12 +28,6 @@
 			"sizes": "890x890",
 			"type": "image/png",
 			"purpose": "any"
-		},
-		{
-			"src": "./images/icon.icns",
-			"sizes": "512x512",
-			"type": "image/icns",
-			"purpose": "any"
 		}
 	],
 	"related_applications": [],
