@@ -1,5 +1,5 @@
-import { Helmet } from "https://esm.sh/react-helmet-async";
-import React, { Component, Fragment } from "https://esm.sh/react@18";
+import { Helmet } from "react-helmet";
+import React, { Component, Fragment } from "react";
 import Main from "./app/main.jsx";
 import Nav from "./app/nav.jsx";
 
@@ -54,7 +54,7 @@ const App = class extends Component {
 					<link rel="icon" type="image/svg+xml" href="./images/pulogo-square.svg" />
 					<link rel="icon" type="image/png" href="./images/pulogo-square.png" />
 
-					<link rel="apple-touch-icon" sizes="512x512" href="./images/icon.icns" />
+					<link rel="apple-touch-icon" sizes="512x512" href="./images/icon.png" />
 
 					<link rel="mask-icon" href="./images/pulogo.svg" color="#0000ff" />
 					<meta name="application-name" content="Pumpn Universe" />
