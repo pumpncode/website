@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet";
 import React, { Component, Fragment } from "react";
+import Main from "./app/main.jsx";
+import Nav from "./app/nav.jsx";
 
 let hasOpenedOnce = false;
 
@@ -62,9 +64,8 @@ const App = class extends Component {
 					<link rel="preload" href="./style.css" as="style" />
 					<link rel="stylesheet" href="./style.css" />
 				</Helmet>
-				<main>
-					<h1>Hello World!</h1>
-				</main>
+				<Nav />
+				<Main />
 			</Fragment>
 		);
 	}
