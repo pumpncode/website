@@ -52,7 +52,10 @@ export default {
 			"js",
 			"jsx",
 			"json",
-			"pcss"
+			"pcss",
+			"svg",
+			"png",
+			"icns"
 		],
 		match: [
 			"**/*.*"
