@@ -30,10 +30,15 @@ export default {
 		},
 		dev: {
 			desc: "dev",
-			cmd: `denon status loading && deno run ./server.js`,
+			cmd: `vr devMap && denon status loading && deno run ./server.js`,
 			env: {
 				mode: "dev"
 			}
+		},
+		devMap: {
+			desc: "devMap",
+			cmd: "./scripts/generate-dev-import-map.js",
+			watch: false
 		},
 		disconnect: {
 			desc: "disconnect",
