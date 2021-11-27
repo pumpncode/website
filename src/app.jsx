@@ -1,5 +1,5 @@
-import { Helmet } from "https://esm.sh/react-helmet-async";
-import React, { Component, Fragment } from "https://esm.sh/react@18?dev";
+import { Helmet } from "react-helmet";
+import React, { Component, Fragment } from "react";
 import Main from "./app/main.jsx";
 import Nav from "./app/nav.jsx";
 

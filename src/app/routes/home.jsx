@@ -1,4 +1,4 @@
-import React, { Component } from "https://esm.sh/react@18?dev";
+import React, { Component } from "react";
 
 const Home = class extends Component {
 	render() {
