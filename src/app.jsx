@@ -25,6 +25,18 @@ const Ultra = class extends Component {
 				console.info("reloading...");
 			};
 		}
+
+		const script = document.createElement("script");
+
+		script.setAttribute("type", "text/javascript");
+		script.async = true;
+		script.innerHTML = `
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('./service-worker.js');
+			}
+		`
+
+		document.body.appendChild(script);
 	}
 
 	render() {
