@@ -37,12 +37,12 @@ export default {
 		},
 		disconnect: {
 			desc: "disconnect",
-			cmd: "./disconnect.js",
+			cmd: "./scripts/disconnect.js",
 			watch: false
 		},
 		status: {
 			desc: "status",
-			cmd: "./status.js",
+			cmd: "./scripts/status.js",
 			watch: false
 		}
 	},
