@@ -46,7 +46,7 @@ const App = class extends Component {
 					<title>Pumpn Universe</title>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<meta name="description" content="Kreatives Konglomerat - seit 2013" />
+					<meta name="description" content="doing stuff & making things since 2013" />
 					<link rel="manifest" href="./manifest.json" />
 
 					<link rel="icon" type="image/svg+xml" href="./images/pulogo-square.svg" />
