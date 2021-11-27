@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Route } from "wouter";
+import React, { Component } from "https://esm.sh/react@18?dev";
+import { Route } from "https://esm.sh/wouter?bundle&dev&deps=react@18";
 
 import routes from "./routes.jsx";
 

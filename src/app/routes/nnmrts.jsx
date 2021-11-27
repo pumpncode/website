@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "https://esm.sh/react@18?dev";
 
 const Nnmrts = class extends Component {
 	render() {
