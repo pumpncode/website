@@ -1,4 +1,4 @@
-import anybar from "anybar";
+import anybar from "https://x.nest.land/anybar@1.0.0/module.js";
 
 const {
 	args: [
