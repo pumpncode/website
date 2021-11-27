@@ -1,9 +1,11 @@
-import { Helmet } from "https://esm.sh/react-helmet-async?deps=react@18.0.0-alpha-bc9bb87c2-20210917&bundle";
-import React, { Component, Fragment } from "https://esm.sh/react@18.0.0-alpha-bc9bb87c2-20210917";
+import { Helmet } from "react-helmet";
+import React, { Component, Fragment } from "react";
+import Main from "./app/main.jsx";
+import Nav from "./app/nav.jsx";
 
 let hasOpenedOnce = false;
 
-const Ultra = class extends Component {
+const App = class extends Component {
 	componentDidMount() {
 		const {
 			hostname
@@ -25,6 +27,18 @@ const Ultra = class extends Component {
 				console.info("reloading...");
 			};
 		}
+
+		const script = document.createElement("script");
+
+		script.setAttribute("type", "text/javascript");
+		script.async = true;
+		script.innerHTML = `
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('./service-worker.js');
+			}
+		`
+
+		document.body.appendChild(script);
 	}
 
 	render() {
@@ -34,17 +48,27 @@ const Ultra = class extends Component {
 					<title>Pumpn Universe</title>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<meta name="description" content="Kreatives Konglomerat - seit 2013" />
+					<meta name="description" content="doing stuff & making things since 2013" />
 					<link rel="manifest" href="./manifest.json" />
+
+					<link rel="icon" type="image/svg+xml" href="./images/pulogo-square.svg" />
+					<link rel="icon" type="image/png" href="./images/pulogo-square.png" />
+
+					<link rel="apple-touch-icon" sizes="512x512" href="./images/icon.icns" />
+
+					<link rel="mask-icon" href="./images/pulogo.svg" color="#0000ff" />
+					<meta name="application-name" content="Pumpn Universe" />
+					<meta name="msapplication-TileColor" content="#0000ff" />
+					<meta name="theme-color" content="#0000ff" />
+
 					<link rel="preload" href="./style.css" as="style" />
 					<link rel="stylesheet" href="./style.css" />
 				</Helmet>
-				<main>
-					<h1>Hello World!</h1>
-				</main>
+				<Nav />
+				<Main />
 			</Fragment>
 		);
 	}
 };
 
-export default Ultra;
+export default App;
