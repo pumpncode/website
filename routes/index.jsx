@@ -1,4 +1,4 @@
-import { define } from "./(__common)/_exports.js";
+import { define } from "./(_common)/_exports.js";
 
 const Home = define.page(() => (
 	<h1>Pumpn Universe</h1>

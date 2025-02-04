@@ -1,4 +1,4 @@
-import define from "../(__common)/define.js";
+import define from "../(_common)/define.js";
 
 const loggerMiddleware = define.middleware((context) => {
 	const {
