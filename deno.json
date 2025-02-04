@@ -1,9 +1,105 @@
 {
+	"tasks": {
+		"build": "deno run -A --env dev.js build",
+		"check": "deno fmt --check && deno lint && deno check **/*.js && deno check **/*.jsx",
+		"db:drizzle-generate": "deno task db:drizzle generate",
+		"db:drizzle-migrate": "deno task db:drizzle migrate",
+		"db:drizzle": "deno --env -A --node-modules-dir npm:drizzle-kit",
+		"db:migrate": {
+			"command": "deno run -A --env ./scripts/post-migrate.js",
+			"dependencies": [
+				"db:drizzle-migrate"
+			]
+		},
+		"db:generate": {
+			"command": "deno run -A --env ./scripts/post-generate.js",
+			"dependencies": [
+				"db:drizzle-generate"
+			]
+		},
+		"dev-tailwind": "deno run -A --watch=static/,routes/ --watch-exclude=static/style.css npm:@tailwindcss/cli@next -i static/style.css -o static/style.compiled.css",
+		"dev": "deno run -A --watch=routes/ --watch-exclude=static/style.css,static/style.compiled.css --env dev.js",
+		"init": "npm install",
+		"knip": "npx knip",
+		"lint": "npx eslint@9.14.0",
+		"start": "deno run -A --env main.js",
+		"update": "deno run -A -r jsr:@unabbreviated-fresh/update ."
+	},
 	"lint": {
 		"rules": {
-			"exclude": [
-				"require-await"
+			"tags": [
+				"fresh",
+				"recommended"
 			]
 		}
-	}
+	},
+	"exclude": [
+		"**/_fresh/*"
+	],
+	"imports": {
+		"@/_common/": "./_common/",
+		"@/database.js": "./database.js",
+		"@/database/schema.js": "./database/schema.js",
+		"@neon/serverless": "jsr:@neon/serverless@^0.10.4",
+		"@neondatabase/serverless": "npm:@neondatabase/serverless@^0.10.4",
+		"@pumpn/eslint-config": "jsr:@pumpn/eslint-config@^15.5.3",
+		"@radashi-org/radashi": "jsr:@radashi-org/radashi@^12.3.0",
+		"@std/http": "jsr:@std/http@^1.0.12",
+		"@tailwindcss/cli": "npm:@tailwindcss/cli@^4.0.0-beta.8",
+		"@fresh/plugin-tailwind": "jsr:@unabbreviated-fresh/plugin-tailwind@^0.0.1-alpha.7",
+		"@types/pg": "npm:@types/pg@^8.11.10",
+		"drizzle-kit": "npm:drizzle-kit@^0.30.1",
+		"drizzle-orm": "npm:drizzle-orm@^0.38.2",
+		"drizzle-zod": "npm:drizzle-zod@^0.6.0",
+		"fresh": "jsr:@unabbreviated-fresh/core@^2.0.0-alpha.27",
+		"preact": "npm:preact@^10.25.2",
+		"@preact/signals": "npm:@preact/signals@^1.3.1",
+		"tailwindcss": "npm:tailwindcss@^4.0.0-beta.8",
+		"type-fest": "npm:type-fest@^4.30.2",
+		"zod": "npm:zod@^3.24.1",
+		"zod-validation-error": "npm:zod-validation-error@^3.4.0"
+	},
+	"fmt": {
+		"options": {
+			"useTabs": true,
+			"indentWidth": 1,
+			"singleQuote": false,
+			"lineWidth": 80,
+			"proseWrap": "never",
+			"semiColons": true
+		}
+	},
+	"nodeModulesDir": "none",
+	"compilerOptions": {
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"checkJs": true,
+		"exactOptionalPropertyTypes": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
+		"noErrorTruncation": true,
+		"noFallthroughCasesInSwitch": false,
+		"noImplicitAny": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noPropertyAccessFromIndexSignature": false,
+		"noUncheckedIndexedAccess": false,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"strictNullChecks": true,
+		"strict": true,
+		"strictPropertyInitialization": false,
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"dom.asynciterable",
+			"deno.ns",
+			"deno.unstable"
+		]
+	},
+	"unstable": [
+		"temporal",
+		"kv"
+	]
 }

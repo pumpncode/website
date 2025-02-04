@@ -1,0 +1,9 @@
+{
+	"$schema": "https://unpkg.com/knip@5/schema.json",
+	"entry": [
+		"dev.js",
+		"main.js",
+		"eslint.config.js"
+	],
+	"project": []
+}
