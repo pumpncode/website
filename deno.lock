@@ -41,6 +41,7 @@
     "npm:@preact/signals@^2.0.1": "2.0.1_preact@10.25.3",
     "npm:@stylistic/eslint-plugin@^2.9.0": "2.13.0_eslint@9.19.0",
     "npm:@tailwindcss/cli@^4.0.3": "4.0.3",
+    "npm:@tailwindcss/cli@next": "4.0.0",
     "npm:@types/node@*": "22.5.4",
     "npm:@types/pg@8.11.6": "8.11.6",
     "npm:@types/pg@^8.11.11": "8.11.11",
@@ -1803,6 +1804,19 @@
         "espree@10.3.0_acorn@8.14.0",
         "estraverse@5.3.0",
         "picomatch@4.0.2"
+      ]
+    },
+    "@tailwindcss/cli@4.0.0": {
+      "integrity": "sha512-nh6kzSTalHf9yk6WNsS4MMZakSINsncNQXsSJthvcPI4x+yajEaNQvS2uUti3PGLbsmlGoUvjhnGTBpzh7H0bA==",
+      "dependencies": [
+        "@parcel/watcher",
+        "@tailwindcss/node",
+        "@tailwindcss/oxide",
+        "enhanced-resolve",
+        "lightningcss",
+        "mri",
+        "picocolors",
+        "tailwindcss@4.0.0"
       ]
     },
     "@tailwindcss/cli@4.0.3": {
@@ -5342,6 +5356,9 @@
         "resolve@1.22.10",
         "sucrase"
       ]
+    },
+    "tailwindcss@4.0.0": {
+      "integrity": "sha512-ULRPI3A+e39T7pSaf1xoi58AqqJxVCLg8F/uM5A3FadUbnyDTgltVnXJvdkTjwCOGA6NazqHVcwPJC5h2vRYVQ=="
     },
     "tailwindcss@4.0.3": {
       "integrity": "sha512-ImmZF0Lon5RrQpsEAKGxRvHwCvMgSC4XVlFRqmbzTEDb/3wvin9zfEZrMwgsa3yqBbPqahYcVI6lulM2S7IZAA=="

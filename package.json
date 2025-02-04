@@ -8,6 +8,7 @@
 	"description": "",
 	"devDependencies": {
 		"@pumpn/eslint-config": "^15.6.1",
+		"@tailwindcss/cli": "^4.0.3",
 		"tailwindcss": "^4.0.3"
 	},
 	"type": "module"
