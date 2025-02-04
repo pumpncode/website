@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"build": "deno run -A --env dev.js build",
+		"build": "deno run -A npm:@tailwindcss/cli@next -i static/style.css -o static/style.compiled.css && deno run -A --env dev.js build",
 		"check": "deno fmt --check && deno lint && deno check **/*.js && deno check **/*.jsx",
 		"db:drizzle-generate": "deno task db:drizzle generate",
 		"db:drizzle-migrate": "deno task db:drizzle migrate",
@@ -21,7 +21,7 @@
 		"dev": "deno run -A --watch=routes/ --watch-exclude=static/style.css,static/style.compiled.css --env dev.js",
 		"init": "npm install",
 		"knip": "npx knip",
-		"lint": "npx eslint@9.14.0",
+		"lint": "npx eslint@9.19.0",
 		"start": "deno run -A --env main.js",
 		"update": "deno run -A -r jsr:@unabbreviated-fresh/update ."
 	},
