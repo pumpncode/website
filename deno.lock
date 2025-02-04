@@ -244,6 +244,7 @@
         "jsr:@std/path@1",
         "jsr:@std/semver",
         "npm:@opentelemetry/api",
+        "npm:@preact/signals@^1.2.3",
         "npm:esbuild",
         "npm:esbuild-wasm",
         "npm:preact-render-to-string",
