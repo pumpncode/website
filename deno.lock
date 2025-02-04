@@ -5655,7 +5655,6 @@
   "workspace": {
     "dependencies": [
       "jsr:@neon/serverless@~0.10.4",
-      "jsr:@pumpn/eslint-config@^15.6.1",
       "jsr:@radashi-org/radashi@^13.0.0-beta.ffa4778",
       "jsr:@std/http@^1.0.13",
       "jsr:@unabbreviated-fresh/core@^2.0.0-alpha.29",
