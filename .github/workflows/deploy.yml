@@ -40,6 +40,5 @@ jobs:
           project: "pumpn"
           entrypoint: "main.js"
           root: "."
-          include: "node_modules"
           
           
