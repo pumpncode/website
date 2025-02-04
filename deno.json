@@ -42,7 +42,7 @@
 		"@/database/schema.js": "./database/schema.js",
 		"@neon/serverless": "jsr:@neon/serverless@^0.10.4",
 		"@neondatabase/serverless": "npm:@neondatabase/serverless@^0.10.4",
-		"@pumpn/eslint-config": "jsr:@pumpn/eslint-config@^15.6.0",
+		"@pumpn/eslint-config": "jsr:@pumpn/eslint-config@^15.6.1",
 		"@radashi-org/radashi": "jsr:@radashi-org/radashi@^13.0.0-beta.ffa4778",
 		"@std/http": "jsr:@std/http@^1.0.13",
 		"@tailwindcss/cli": "npm:@tailwindcss/cli@^4.0.3",
