@@ -12,3 +12,5 @@ node_modules/
 vendor/
 
 static/style.compiled.css
+
+.DS_Store
